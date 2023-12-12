@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My first portfolio application</title>
+        <link href="style.css" rel="stylesheet" />
+        <link href="./css/extra-style.css" rel="stylesheet" />
+        <script
+            src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
+            crossorigin="anonymous"
+        ></script>
+        <!-- Google fonts-->
+        <link
+            href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <style>
+            .left-nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    background-color: rgb(189, 93, 56);
+    width: 17%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.profile-pic{
+    margin-bottom: 40px;
+}
+
+.profile-pic-img {
+    height: 160px;
+    width: 160px;
+    border: 10px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+}
+
+.nav-links ul {
+    padding-left: 0px;
+    text-align: center;
+}
+
+.nav-links li, .nav-links li a {
+    color: white;
+    list-style: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 28px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+body {
+    padding-left: 17%;
+}
+
+.main-section {
+    min-height: 80vh;
+    border-bottom: 2px solid grey;
+    padding: 40px;
+}
+
+#about {
+    padding: 150px 40px;
+}
+.personal-details, .profile-summary {
+    margin: 20px 0;
+}
+.text-custom-color{
+    color: rgb(189, 93, 56)
+}
+
+#experience, #education, #skills, #interests, #awards{
+    padding: 80px 40px;
+}
+#experience h2,  #education h2,
+ #skills h2, #interests h2, #awards h2 {
+    margin-bottom: 40px;
+}
+
+.awards-list li{
+    list-style: none;
+}
+        </style>
+    </head>
+    <body>
+        <div class="left-nav">
+            <div class="profile-pic">
+                <img
+                    class="profile-pic-img"
+                    src="data:image/jpeg;base64,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"
+                    alt="profile picture"
+                />
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#interests">Interests</a></li>
+                    <li><a href="#awards">Awards</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="right-content">
+            <section class="main-section" id="about">
+                <h1 class="profile-name">
+                    VIKAS <span class="text-custom-color">RANJAN</span>
+                </h1>
+                <div class="personal-details">
+                    <ul>
+                        <li class="address">
+                            3542 BERRY STREET, CHEYENNE WELLS, CO 80810
+                        </li>
+                        <li class="phone">(317) 585-8468</li>
+                        <li class="email text-custom-color">name@email.com</li>
+                    </ul>
+                </div>
+                <div class="profile-summary">
+                    I am experienced in leveraging agile frameworks to provide a
+                    robust synopsis for high level overviews. Iterative
+                    approaches to corporate strategy foster collaborative
+                    thinking to further the overall value proposition.
+                </div>
+                <div class="social-icons">
+                    <a
+                        class="social-icon"
+                        href="https://www.linkedin.com/in/vikasranjan27/"
+                        target="_blank"
+                        ><i class="fab fa-linkedin-in"></i
+                    ></a>
+                    <a
+                        class="social-icon"
+                        href="https://github.com/vikas2705"
+                        target="_blank"
+                        ><i class="fab fa-github"></i
+                    ></a>
+                    <a class="social-icon" href="#!"
+                        ><i class="fab fa-facebook-f"></i
+                    ></a>
+                </div>
+            </section>
+            <section class="main-section" id="experience">
+                <h2>Experience</h2>
+
+                <div class="experience-item">
+                    <div class="experience-heading">
+                        <h3 class="experience-title">
+                            SENIOR SOFTWARE ENGINEER
+                        </h3>
+                        <div class="experience-date text-custom-color">
+                            March 2013 - Present
+                        </div>
+                    </div>
+
+                    <h4 class="experience-subheading">COINBASE</h4>
+                    <div class="experience-details">
+                        Bring to the table win-win survival strategies to ensure
+                        proactive domination. At the end of the day, going
+                        forward, a new normal that has evolved from generation X
+                        is on the runway heading towards a streamlined cloud
+                        solution. User generated content in real-time will have
+                        multiple touchpoints for offshoring.
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-heading">
+                        <h3 class="experience-title">Technical Lead</h3>
+                        <div class="experience-date text-custom-color">
+                            June 2019 - Feb 2022
+                        </div>
+                    </div>
+
+                    <h4 class="experience-subheading">ZOMATO</h4>
+                    <div class="experience-details">
+                        Bring to the table win-win survival strategies to ensure
+                        proactive domination. At the end of the day, going
+                        forward, a new normal that has evolved from generation X
+                        is on the runway heading towards a streamlined cloud
+                        solution. User generated content in real-time will have
+                        multiple touchpoints for offshoring.
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-heading">
+                        <h3 class="experience-title">
+                            SENIOR SOFTWARE ENGINEER
+                        </h3>
+                        <div class="experience-date text-custom-color">
+                            March 2013 - Present
+                        </div>
+                    </div>
+
+                    <h4 class="experience-subheading">COINBASE</h4>
+                    <div class="experience-details">
+                        Bring to the table win-win survival strategies to ensure
+                        proactive domination. At the end of the day, going
+                        forward, a new normal that has evolved from generation X
+                        is on the runway heading towards a streamlined cloud
+                        solution. User generated content in real-time will have
+                        multiple touchpoints for offshoring.
+                    </div>
+                </div>
+            </section>
+            <section class="main-section" id="education">
+                <h2>Education</h2>
+
+                <div class="experience-item">
+                    <div class="experience-heading">
+                        <h3 class="experience-title">
+                            UNIVERSITY OF COLORADO BOULDER
+                        </h3>
+                        <div class="experience-date text-custom-color">
+                            August 2006 - May 2010
+                        </div>
+                    </div>
+
+                    <h4 class="experience-subheading">BACHELOR OF SCIENCE</h4>
+                    <div class="experience-details">
+                        Computer Science - Web Development Track GPA: 3.23
+                    </div>
+                </div>
+            </section>
+            <section class="main-section" id="skills">
+                <h2>Skills</h2>
+
+                <h3>PROGRAMMING LANGUAGES & TOOLS</h3>
+                <ul class="list-inline dev-icons">
+                    <li class="list-inline-item">
+                        <i class="fab fa-html5"></i>
+                    </li>
+                    <li class="list-inline-item">
+                        <i class="fab fa-css3-alt"></i>
+                    </li>
+                    <li class="list-inline-item">
+                        <i class="fab fa-js-square"></i>
+                    </li>
+                    <li class="list-inline-item">
+                        <i class="fab fa-angular"></i>
+                    </li>
+                    <li class="list-inline-item">
+                        <i class="fab fa-react"></i>
+                    </li>
+                    <li class="list-inline-item">
+                        <i class="fab fa-node-js"></i>
+                    </li>
+                    <li class="list-inline-item">
+                        <i class="fab fa-sass"></i>
+                    </li>
+                    <li class="list-inline-item">
+                        <i class="fab fa-less"></i>
+                    </li>
+                    <li class="list-inline-item">
+                        <i class="fab fa-wordpress"></i>
+                    </li>
+                    <li class="list-inline-item">
+                        <i class="fab fa-gulp"></i>
+                    </li>
+                    <li class="list-inline-item">
+                        <i class="fab fa-grunt"></i>
+                    </li>
+                    <li class="list-inline-item">
+                        <i class="fab fa-npm"></i>
+                    </li>
+                </ul>
+            </section>
+            <section class="main-section" id="interests">
+                <h2>Interests</h2>
+
+                <p>
+                    Apart from being a web developer, I enjoy most of my time
+                    being outdoors. In the winter, I am an avid skier and novice
+                    ice climber. During the warmer months here in Colorado, I
+                    enjoy mountain biking, free climbing, and kayaking.
+                </p>
+                <p>
+                    When forced indoors, I follow a number of sci-fi and fantasy
+                    genre movies and television shows, I am an aspiring chef,
+                    and I spend a large amount of my free time exploring the
+                    latest technology advancements in the front-end web
+                    development world.
+                </p>
+            </section>
+            <section class="main-section" id="awards">
+                <h2>AWARDS & CERTIFICATIONS</h2>
+
+                <ul class="awards-list">
+                    <li>
+                        <i class="fa-solid fa-trophy"></i> Google Analytics
+                        Certified Developer
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-trophy"></i> Mobile Web Specialist
+                        - Google Certification
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-trophy"></i>
+                        1 st Place - University of Colorado Boulder - Emerging
+                        Tech Competition 2009
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-trophy"></i>
+                        3 rd Place - James Buchanan High School - Hackathon 2005
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-trophy"></i>
+                        2 nd Place - University of Colorado Boulder - Emerging
+                        Tech Competition 2008
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </body>
+</html>
